@@ -1,0 +1,41 @@
+<table class="table table-bordered table-hover table-dark">
+  <thead>
+    <tr>
+      <th>N° Solicitud</th>
+      <th>Nombre</th>
+      <th>Apellido</th>
+      <th>Edad</th>
+      <th>Correo</th>
+      <th>Curriculum</th>
+      <th>options</th>
+
+    </tr>
+  </thead>
+
+  <tbody>
+    {{#each posts}}
+      <tr>
+        <td>{{@index}}</td>
+        <td>{{nombre}}</td>
+        <td>{{apellido}}</td>
+        <td>{{edad}}</td>
+        <td>{{correo}}</td>
+        <td>{{curriculum}}</td>
+        <td>
+          {{#if check}}
+            <a href="/toggleDone/{{_id}}" class="btn btn-success color-white">Revisado</a>
+          {{else}}
+            <a
+              href="/toggleDone/{{_id}}"
+              class="btn btn-dark color-white"
+            >Sin Revisar</a>
+          {{/if}}
+
+          <a href="/edit/{{_id}}" class="btn btn-dark color-white">Editar</a>
+          <a href="/delete/{{_id}}" class="btn btn-dark color-white">Eliminar</a>
+
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>

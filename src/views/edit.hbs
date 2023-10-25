@@ -1,0 +1,46 @@
+<div class="container">
+
+  <div class="row">
+    <div class="col-md-5 offset-md-3">
+      <div class="card card-body bg-dark p-4 text-white rounded-0">
+        <h3>Curriculum</h3>
+        <form action="/edit/{{post._id}}" method="POST">
+          <input
+            type="text"
+            name="nombre"
+            placeholder="nombre"
+            value="{{post.nombre}}"
+            class="mb-2 form-control bg-dark text-white"
+          />
+            <input
+            type="text"
+            name="apellido"
+            placeholder="nombre"
+            value="{{post.apellido}}"
+            class="mb-2 form-control bg-dark text-white"
+          />
+            <input
+            type="number"
+            name="edad"
+            placeholder="nombre"
+            value="{{post.edad}}"
+            class="mb-2 form-control bg-dark text-white"
+          />
+
+          <textarea
+            name="curriculum"
+            rows="3"
+            placeholder="add a Description"
+            class="form-control bg-dark text-white"
+          >{{post.curriculum}}
+          </textarea>
+
+          <button
+            class="mt-2 bg-dark text-white btn btn-primary"
+          >Update</button>
+
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
